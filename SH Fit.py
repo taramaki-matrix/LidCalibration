@@ -1,10 +1,14 @@
 # MGA-1 4-parameter S-H Fit
 # Author: Tyson Aramaki
 
-import csv
-import numpy
-from scipy.optimize import curve_fit
-import matplotlib.pyplot as plt
+try:
+    import csv
+    import numpy
+    from scipy.optimize import curve_fit
+    import matplotlib.pyplot as plt
+except:
+    print("One or more packages is not installed. \nThis script requires packages csv, numpy, scipy, and matplotlib. \nMake sure these are installed, and try again.")
+
 
 ### USER INPUTS BEGIN --------------------------------------------
 Tdata = []
