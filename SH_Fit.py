@@ -11,6 +11,8 @@ Rdata = []
 R25 = 10000 
 Nominal_coeffs = [0.003354016,0.000300131,0.00000508516,0.000000218765] # Default S-H values for the thermistor in question (and R25!)
 
+plt.show()
+
 # read data from CSV file
 with open('data.csv', newline='') as csvfile:
     datareader = csv.reader(csvfile, delimiter=',')
