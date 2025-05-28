@@ -19,6 +19,10 @@ with open('data.csv', newline='') as csvfile:
         #print(row)
         Rdata.append(float(row[1])) 
         Tdata.append(float(row[0]))
+if len(Rdata) < 7:
+    print("WARNING: Less than 7 data points. Did you copy data correctly?")
+if len(Rdata) == 0:
+    print("WARNING: Data file is empty")
 print("\nTemps from datafile:" + str(Tdata))
 print("Resistances from datafile:" + str(Rdata))
 
@@ -58,8 +62,8 @@ with open('output.csv', 'w', newline='') as outputfile:
     if sumofsquares <= .02:
         writer.writerow(['No Warnings. Fit looks good!'])
     else:
-        writer.writerow(["WARNING: Fit SSE is out of range (>.02). Fit invalid."])
-        print("WARNING: Fit SSE is out of range (>.02). Fit invalid.")
+        writer.writerow(["WARNING: Fit SSE is out of range (>.02). Fit may be invalid."])
+        print("WARNING: Fit SSE is out of range (>.02). Fit may be invalid.")
 
 # plot original data and resulting smooth curve
 fit_domain = range(475,23000,200)
